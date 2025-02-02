@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unbranded Loaders</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            margin: 0;
+            font-family: "Tomorrow", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            background: linear-gradient(85deg, #1F1F1F, #141414, #1C1C1C);
+            background-size: 200% 200%;
+            animation: gradientBackground 15s ease infinite;
+            color: #E0E0E0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding-top: 50px;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            animation-delay: 0.5s;
+        }
+
+        h1 {
+            font-family: "Tomorrow", sans-serif;
+            position: relative;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #ff00c8;
+            font-size: 3rem;
+            border-right: 0.15em solid #ff00c8;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 60%;
+            }
+        }
+
+        @keyframes blink-caret {
+            0%, 100% {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #ff00c8;
+            }
+        }
+
+        h1.typing-complete {
+            border-right: none;
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            text-shadow: 1px 1px 2px #000000;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .category {
+            margin-bottom: 50px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .button-container a:only-child {
+            grid-column: span 2;
+            justify-self: center;
+        }
+
+        .button {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #ff00c8;
+            color: white;
+            background-color: #1C1C1C;
+            text-decoration: none;
+            border-radius: 14px;
+            transition: transform 0.5s ease, box-shadow 0.3s ease, background-color 0.5s ease, color 0.3s ease;
+            box-shadow: 0px 0px 10px #ff00c8;
+        }
+
+        .button::after {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(146, 0, 255, 0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .button:hover::after {
+            left: 100%;
+        }
+
+        .click-me {
+            margin: 0;
+            margin-left: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #E0E0E0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a .click-me {
+            color: #E0E0E0;
+        }
+
+        .button:hover {
+            background-color: #ff00c8;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0px 8px 25px #ff00c8;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .button-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Style pour les logos flottants en bas à droite */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .floating-buttons img {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Sicarios Loaders</h1>
+
+        <!--<div class="category">
+            <h2>MW3/BO6</h2>
+            <div class="button-container">
+                <a href="https://raw.githubusercontent.com/avod245/1139271388142768158_cloud/main/HOLLOW_UA.exe" class="button">BO6 UNLOCKER</a>
+                <a href="https://raw.githubusercontent.com/avod245/1070439473491488880_cloud/main/Loader.exe" class="button">BO6/WZ4 INTERNAL CHAIR</a>
+                <a href="https://raw.githubusercontent.com/avod245/1314418844072153158_cloud/main/LD1027.exe" class="button">MW3/BO6 EXTERNAL CHAIR LDV2</a>
+                <a href="https://raw.githubusercontent.com/avod245/1183938967024959659_cloud/main/AFKBOT_UNBRANDED.rar" class="button">WZ4 AFK BOT</a>
+            </div>
+        </div>-->
+
+        <!--<div class="category">
+            <h2>FIVEM</h2>
+            <div class="button-container">
+                <a href="https://raw.githubusercontent.com/avod245/1183938967024959659_cloud/main/FIVEM_EXTERNAL_CHAIR.exe" class="button">FIVEM EXTERNAL CHAIR</a>
+            </div>
+        </div>-->
+
+        <!--<div class="category">
+            <h2>FORTNITE</h2>
+            <div class="button-container">
+                <a href="https://raw.githubusercontent.com/avod245/1183938967024959659_cloud/main/FORTNITE.exe" class="button">FORTNITE EXTERNAL CHAIR</a>
+            </div>
+        </div>-->
+        <div class="category">
+            <h2>VALORANT</h2>
+            <div class="button-container">
+                <a href="https://github.com/iTeKk38/main/raw/refs/heads/main/RecheckUpdate.exe" class="button">VALORANT INTERNAL CHAIR</a>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>AUTRE</h2>
+            <div class="button-container">
+                <a href="https://drive.usercontent.google.com/download?id=1rgHywgGyv9fmRwAfduXy1ni1UA1xXCl5&export=download&authuser=0&confirm=t&uuid=1ab975b9-77e3-40b2-97f0-1df0cdfb5e57&at=AIrpjvPEovPoALh9uBivp4znXXm1%3A1738507551559" class="button">SPOOFER HWID</a>
+                <p class="click-me">LE LOADER NE SOUVRE PAS? <a href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.403-windows-x86-installer" class="click-me">Click ICI</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logos flottants -->
+    <div class="floating-buttons">
+        <a href="https://sicarios.mysellauth.com/" class="button"><img src="images/websie.png" alt="Site Web"></a>
+        <a href="#" class="button"><img src="images/1705243.png" alt="Guide"></a>
+    </div>
+    
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.getElementById('title');
+        
+        setTimeout(() => {
+            title.classList.add('typing-complete');
+        }, 3500);
+    });
+</script>
+
+</body></html>
